@@ -1,7 +1,12 @@
 {
-    "version": "0.0.1",
-    "name": "gazebo_pick_and_place",
-    "botX_modules": {},
+    "botX_modules": {
+        "gazebo_api": {
+            "url": "https://github.com/superbotx/gazebo_api/archive/master.zip",
+            "name": "gazebo_api"
+        }
+    },
+    "source_scripts": [],
     "external_modules": {},
-    "source_scripts": []
+    "version": "0.0.1",
+    "name": "gazebo_pick_and_place"
 }

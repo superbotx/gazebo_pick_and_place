@@ -31,4 +31,25 @@ documentation generation.
 
 Modify the following variable to your needs
 """
-botXexport = {}
+
+from gazebo_sim_bot import GazeboSimBot
+from pick_and_place import PickAndPlace
+
+botXexport = {
+    'pick_and_place': {
+        'module': PickAndPlace,
+        'type': 'task',
+        'inputs': [],
+        'outputs': [],
+        'requirements': ['gazebo'],
+        'description': 'This task perform pick and place in gazebo simulation'
+    },
+    'gazebo_sim_robot': {
+        'module': GazeboSimBot,
+        'type': 'robot',
+        'inputs': [],
+        'outputs': [],
+        'requirements': ['gazebo'],
+        'description': 'This is the entire robot api for gazebo simulation'
+    }
+}
