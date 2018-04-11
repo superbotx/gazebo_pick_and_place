@@ -57,17 +57,13 @@ jobs:
           name: test botx installation
           command: |
             . venv/bin/activate
-            pip3 list
-            pip list
-            pip --version
-            pip3 --version
             alias python=python3
-            python --version
             botX version
 
       - run:
           name: install botx dependencies
           command: |
+            source /opt/ros/kinetic/setup.bash
             . venv/bin/activate
             alias python=python3
             botX install
