@@ -48,8 +48,10 @@ jobs:
           name: install botx module
           command: |
             . venv/bin/activate
-            pip3 install git+https://github.com/superbotx/botX
-            pip3 list
+            git clone https://github.com/superbotx/botX
+            cd botX
+            python3 setup.py build
+            python3 setup.py install
 
       - run:
           name: test botx installation
