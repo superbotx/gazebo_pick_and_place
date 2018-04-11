@@ -56,6 +56,9 @@ jobs:
           command: |
             . venv/bin/activate
             pip3 list
+            pip list
+            pip --version
+            pip3 --version
             alias python=python3
             python --version
             botX version
