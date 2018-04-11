@@ -55,7 +55,9 @@ jobs:
           name: test botx installation
           command: |
             . venv/bin/activate
+            pip3 list
             alias python=python3
+            python --version
             botX version
 
       - run:
