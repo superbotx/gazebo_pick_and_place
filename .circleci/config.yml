@@ -45,13 +45,19 @@ jobs:
       # https://pytest.org
       # https://nose.readthedocs.io
       - run:
-          name: test install botx module
+          name: install botx module
           command: |
             . venv/bin/activate
-            pip install git+https://github.com/superbotx/botX
+            pip3 install git+https://github.com/superbotx/botX
 
       - run:
-          name: test install botx dependencies
+          name: test botx installation
+          command: |
+            . venv/bin/activate
+            botX version
+
+      - run:
+          name: install botx dependencies
           command: |
             . venv/bin/activate
             alias python=python3
