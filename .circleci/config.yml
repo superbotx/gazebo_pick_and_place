@@ -49,6 +49,7 @@ jobs:
           command: |
             . venv/bin/activate
             pip3 install git+https://github.com/superbotx/botX
+            pip3 list
 
       - run:
           name: test botx installation
