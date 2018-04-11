@@ -54,6 +54,7 @@ jobs:
           name: test install botx dependencies
           command: |
             . venv/bin/activate
+            alias python=python3
             botX install
 
       - store_artifacts:
