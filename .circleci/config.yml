@@ -45,7 +45,7 @@ jobs:
       # https://pytest.org
       # https://nose.readthedocs.io
       - run:
-          name: install botx
+          name: install botx module
           command: |
             . venv/bin/activate
             pip install git+https://github.com/superbotx/botX
