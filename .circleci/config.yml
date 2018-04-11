@@ -8,7 +8,7 @@ jobs:
     docker:
       # specify the version you desire here
       # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
-      - image: https://hub.docker.com/r/tianhaoz95/ros-docker-image-botx/
+      - image: tianhaoz95/ros-docker-image-botx
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
