@@ -45,6 +45,17 @@ jobs:
       # https://pytest.org
       # https://nose.readthedocs.io
       - run:
+          name: check native pip packages
+          command: |
+            pip list
+
+      - run:
+          name: check venv pip packages
+          command: |
+            . venv/bin/activate
+            pip list
+
+      - run:
           name: install botx module
           command: |
             . venv/bin/activate
