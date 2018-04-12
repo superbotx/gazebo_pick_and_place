@@ -58,7 +58,6 @@ jobs:
       - run:
           name: install botx module
           command: |
-            . venv/bin/activate
             git clone https://github.com/superbotx/botX
             cd botX
             python3 setup.py build
@@ -67,7 +66,6 @@ jobs:
       - run:
           name: test botx installation
           command: |
-            . venv/bin/activate
             botX version
 
       - run:
