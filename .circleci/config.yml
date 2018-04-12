@@ -74,8 +74,6 @@ jobs:
           name: install botx dependencies
           command: |
             source /opt/ros/kinetic/setup.bash
-            . venv/bin/activate
-            source /opt/ros/kinetic/setup.bash
             botX install
 
       - store_artifacts:
