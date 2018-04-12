@@ -66,6 +66,7 @@ jobs:
             source /opt/ros/kinetic/setup.bash
             . venv/bin/activate
             alias python=python3
+            source /opt/ros/kinetic/setup.bash
             botX install
 
       - store_artifacts:
