@@ -1,4 +1,4 @@
-# gazebo_pick_and_place
+# gazebo pick and place
 
 |System|Status|
 | ------------- |:-------------:|
