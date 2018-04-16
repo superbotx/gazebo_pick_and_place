@@ -71,10 +71,10 @@ class PlaceObject(BaseTask):
 class PickAndPlace(BaseTask):
     def __init__(self, robot):
         super(PickAndPlace, self).__init__(robot)
-        self.add_subtask('locate_object', LocateObject())
-        self.add_subtask('pick_object', PickObject())
-        self.add_subtask('place_object', PlaceObject())
-        self.add_subtask('find_space', PlaceObject())
+        # self.add_subtask('locate_object', LocateObject())
+        # self.add_subtask('pick_object', PickObject())
+        # self.add_subtask('place_object', PlaceObject())
+        # self.add_subtask('find_space', PlaceObject())
 
     def setup(self, **kwargs):
         # anything this task needs to know upfront will be set here
