@@ -1,5 +1,5 @@
 from botX.tasks import BaseTask
-from packaged_mask_rcnn import EZ
+# from packaged_mask_rcnn import EZ
 
 class LocateObject(BaseTask):
     def __init__(self, robot):

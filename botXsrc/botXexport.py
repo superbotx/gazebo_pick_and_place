@@ -31,6 +31,8 @@ documentation generation.
 
 Modify the following variable to your needs
 """
+import sys
+sys.path.append('botXsrc')
 
 from gazebo_sim_bot import GazeboSimBot
 from pick_and_place import PickAndPlace
