@@ -1,4 +1,5 @@
 from botXsrc.botXexport import botXexport
+import time
 
 """
 botXexport is a dictionary containing all the reusable components you
@@ -8,8 +9,10 @@ def main():
     print('starting app ...')
     robot = botXexport['gazebo_sim_robot']['module']()
     task = botXexport['pick_and_place']['module'](robot)
+    print(task)
     robot.start()
-    tasks.run()
+    time.sleep(5)
+    task.run(target_object='cup')
     robot.shutdown()
     print('all tasks finished')
 

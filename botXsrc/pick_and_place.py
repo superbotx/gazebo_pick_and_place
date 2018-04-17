@@ -1,23 +1,29 @@
 from botX.tasks import BaseTask
 # from packaged_mask_rcnn import EZ
+# import packaged_mask_rcnn.mask_rcnn.ez as ez
+
 
 class LocateObject(BaseTask):
     def __init__(self, robot):
         super(LocateObject, self).__init__(robot)
+        self.setup()
 
     def setup(self, **kwargs):
         # anything this task needs to know upfront will be set here
         # for example initialize mask rcnn
-        self.mask_rcnn = EZ()
+        # self.mask_rcnn = packaged_mask_rcnn.EZ()
+        # self.mask_rcnn = ez.EZ()
+        pass
 
     def run(self, **kwargs):
         target_object = kwargs['target_object']
         images = self.robot.components['camera'].get_image(['rgb', 'd'])
-        annotated_img, statistic_res = self.mask_rcnn.detect(images[0])
-        if target_object in set(statistic_res['class_names']):
-            return 'found', statistic_res[target_object]
-        else:
-            return 'not_found', None
+        print("Images: ", images)
+        # annotated_img, statistic_res = self.mask_rcnn.detect(images[0])
+        # if target_object in set(statistic_res['class_names']):
+        #     return 'found', statistic_res[target_object]
+        # else:
+        #     return 'not_found', None
 
 class PickObject(BaseTask):
     def __init__(self, robot):

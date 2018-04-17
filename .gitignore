@@ -5,3 +5,5 @@ external_modules/*
 __pycache__
 !botX_modules/__init__.py
 tmp/*
+packaged_mask_rcnn/*
+*.h5

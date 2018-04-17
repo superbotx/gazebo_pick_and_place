@@ -4,9 +4,9 @@ from botX.applications import botXimport
 
 class GazeboSimKinect(BaseComponent):
     def setup(self):
-        gz = botXimport('gazebo_api')['gazebo_api']['module']()
+        self.gz = botXimport('gazebo_api')['gazebo_api']['module']()
         
-        gz.setup()
+        self.gz.setup()
 
         # setup camera topics
         self.frame = "camera_link"
@@ -15,11 +15,14 @@ class GazeboSimKinect(BaseComponent):
         self.topic_info_camera = '/camera/camera_info' 
 
     def shutdown(self):
-        gz.shutdown()
+        self.gz.shutdown()
         """
         Here you need to stop the process started in the setup
         """
         # external_command_pool.end_command(self.camera_proc_id)
+
+    def get_image(self, *img_type):
+        self.gz.get_image();
 
     @property
     def camera_info(self):
@@ -43,7 +46,8 @@ class GazeboSimBot(BaseRobot):
 
         # add api from gazebo_api to robot as components using
         # self.add_component(...)
-        self.add_component('camera',GazeboSimKinect)
+        self.add_component('camera',GazeboSimKinect())
+        self.setup_components()
 
     def additional_setup(self):
         # do any additional setup other than the ones in component setup

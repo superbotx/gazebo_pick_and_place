@@ -35,11 +35,11 @@ import sys
 sys.path.append('botXsrc')
 
 from gazebo_sim_bot import GazeboSimBot
-from pick_and_place import PickAndPlace
+from pick_and_place import PickAndPlace, LocateObject
 
 botXexport = {
     'pick_and_place': {
-        'module': PickAndPlace,
+        'module': LocateObject,
         'type': 'task',
         'inputs': [],
         'outputs': [],
