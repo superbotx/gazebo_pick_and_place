@@ -13,7 +13,7 @@ def main():
     robot.start()
     time.sleep(5)
     task.run(target_object='cup')
-    robot.shutdown()
+    # robot.shutdown()
     print('all tasks finished')
 
 """

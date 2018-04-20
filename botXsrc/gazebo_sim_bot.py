@@ -2,6 +2,18 @@ from botX.robots import BaseRobot
 from botX.components import BaseComponent
 from botX.applications import botXimport
 
+class GraspController(BaseComponent):
+    def setup(self):
+        self.grasp = botXimport('grasp_api')['grasp_api']['module']()
+        self.grasp.setup()
+
+    def get_grasp(self, object_name='cup', bounding_box=None):
+        grasp_pose = self.grasp.object_to_grasp(object_name, bounding_box)
+        return grasp_pose
+
+    def shutdown(self):
+        self.grasp.shutdown()
+
 class GazeboSimKinect(BaseComponent):
     def setup(self):
         self.gz = botXimport('gazebo_api')['gazebo_api']['module']()
@@ -22,7 +34,8 @@ class GazeboSimKinect(BaseComponent):
         # external_command_pool.end_command(self.camera_proc_id)
 
     def get_image(self, *img_type):
-        self.gz.get_image();
+        im = self.gz.get_image();
+        return im
 
     @property
     def camera_info(self):
@@ -47,7 +60,9 @@ class GazeboSimBot(BaseRobot):
         # add api from gazebo_api to robot as components using
         # self.add_component(...)
         self.add_component('camera',GazeboSimKinect())
-        self.setup_components()
+        self.add_component('grasp', GraspController())
+        # self.add_component('bridge', botXimport('rosbridge_api')['rosbridge_suit_component']['module']())
+        # self.setup_components()
 
     def additional_setup(self):
         # do any additional setup other than the ones in component setup
