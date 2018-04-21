@@ -1,69 +1,77 @@
 {
-    "source_scripts": [],
-    "version": "0.0.1",
-    "botX_modules": {
-        "rosbridge_api": {
-            "name": "rosbridge_api",
-            "url": "https://github.com/superbotx/rosbridge_api.git"
-        },
-        "gazebo_api": {
-            "name": "gazebo_api",
-            "url": "https://github.com/superbotx/gazebo_api.git"
-        },
-        "grasp_api": {
-            "name": "grasp_api",
-            "url": "https://github.com/superbotx/grasp_api.git"
-        }
-    },
     "name": "gazebo_pick_and_place",
     "external_modules": {
+        "gqcnn": {
+            "url": "https://github.com/superbotx/gqcnn.git",
+            "name": "gqcnn"
+        },
         "ros_control": {
-            "name": "ros_control",
-            "url": "https://github.com/ros-controls/ros_control/archive/kinetic-devel.zip"
+            "url": "https://github.com/ros-controls/ros_control/archive/kinetic-devel.zip",
+            "name": "ros_control"
         },
-        "perception": {
-            "name": "perception",
-            "url": "https://github.com/superbotx/perception.git"
-        },
-        "moveit": {
-            "name": "moveit",
-            "url": "https://github.com/ros-planning/moveit/archive/kinetic-devel.zip"
-        },
-        "realtime_tools": {
-            "name": "realtime_tools",
-            "url": "https://github.com/ros-controls/realtime_tools/archive/kinetic-devel.zip"
-        },
-        "moveit_resources": {
-            "name": "moveit_resources",
-            "url": "https://github.com/ros-planning/moveit_resources/archive/master.zip"
-        },
-        "control_toolbox": {
-            "name": "control_toolbox",
-            "url": "https://github.com/ros-controls/control_toolbox/archive/kinetic-devel.zip"
-        },
-        "haptica_gazebo": {
-            "name": "haptica_gazebo",
-            "url": "https://github.com/superbotx/haptica_gazebo/archive/master.zip"
-        },
-        "haptica_util": {
-            "name": "haptica_util",
-            "url": "https://github.com/superbotx/haptica_util.git"
+        "haptica_manipulation": {
+            "url": "https://github.com/superbotx/haptica_manipulation.git",
+            "name": "haptica_manipulation"
         },
         "kinova-ros": {
-            "name": "kinova-ros",
-            "url": "https://github.com/CNURobotics/kinova-ros/archive/kinetic_devel.zip"
+            "url": "https://github.com/CNURobotics/kinova-ros/archive/kinetic_devel.zip",
+            "name": "kinova-ros"
         },
-        "gqcnn": {
-            "name": "gqcnn",
-            "url": "https://github.com/superbotx/gqcnn.git"
+        "control_toolbox": {
+            "url": "https://github.com/ros-controls/control_toolbox/archive/kinetic-devel.zip",
+            "name": "control_toolbox"
+        },
+        "haptica_util": {
+            "url": "https://github.com/superbotx/haptica_util.git",
+            "name": "haptica_util"
         },
         "ros_bridge": {
-            "name": "ros_bridge",
-            "url": "https://github.com/superbotx/ros_bridge.git"
+            "url": "https://github.com/superbotx/ros_bridge.git",
+            "name": "ros_bridge"
+        },
+        "moveit_resources": {
+            "url": "https://github.com/ros-planning/moveit_resources/archive/master.zip",
+            "name": "moveit_resources"
+        },
+        "perception": {
+            "url": "https://github.com/superbotx/perception.git",
+            "name": "perception"
         },
         "gazebo_ros_pkgs": {
-            "name": "gazebo_ros_pkgs",
-            "url": "https://github.com/ros-simulation/gazebo_ros_pkgs/archive/kinetic-devel.zip"
+            "url": "https://github.com/ros-simulation/gazebo_ros_pkgs/archive/kinetic-devel.zip",
+            "name": "gazebo_ros_pkgs"
+        },
+        "realtime_tools": {
+            "url": "https://github.com/ros-controls/realtime_tools/archive/kinetic-devel.zip",
+            "name": "realtime_tools"
+        },
+        "moveit": {
+            "url": "https://github.com/ros-planning/moveit/archive/kinetic-devel.zip",
+            "name": "moveit"
+        },
+        "haptica_gazebo": {
+            "url": "https://github.com/superbotx/haptica_gazebo/archive/master.zip",
+            "name": "haptica_gazebo"
+        }
+    },
+    "version": "0.0.1",
+    "source_scripts": [],
+    "botX_modules": {
+        "grasp_api": {
+            "url": "https://github.com/superbotx/grasp_api.git",
+            "name": "grasp_api"
+        },
+        "rosbridge_api": {
+            "url": "https://github.com/superbotx/rosbridge_api.git",
+            "name": "rosbridge_api"
+        },
+        "manipulation_api": {
+            "url": "https://github.com/superbotx/manipulation_api.git",
+            "name": "manipulation_api"
+        },
+        "gazebo_api": {
+            "url": "https://github.com/superbotx/gazebo_api.git",
+            "name": "gazebo_api"
         }
     }
 }

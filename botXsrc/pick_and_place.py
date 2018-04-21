@@ -29,9 +29,13 @@ class LocateObject(BaseTask):
         # else:
         #     return 'not_found', None
 
-        grasp_pose = self.robot.components['grasp'].get_grasp('cup')
+        grasp_pose = self.robot.components['grasp'].get_grasp(object_name = 'cup', bounding_box=None)
         print("GRASP POSE: ")
         print(grasp_pose)
+
+        planned_path = self.robot.components['path_planner'].get_path(grasp_pose.pose)
+        print("PLANNED PATH: ")
+        print(planned_path)
 
 class PickObject(BaseTask):
     def __init__(self, robot):

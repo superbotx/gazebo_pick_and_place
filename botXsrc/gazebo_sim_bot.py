@@ -1,6 +1,19 @@
 from botX.robots import BaseRobot
 from botX.components import BaseComponent
 from botX.applications import botXimport
+import rospy
+
+class ManipulationController(BaseComponent):
+    def setup(self):
+        self.path = botXimport('manipulation_api')['manipulation_api']['module']()
+        self.path.setup()
+
+    def get_path(self, pose):
+        planned_path = self.path.plan_path(pose)
+        return planned_path
+
+    def shutdown(self):
+        self.path.shutdown()
 
 class GraspController(BaseComponent):
     def setup(self):
@@ -17,6 +30,7 @@ class GraspController(BaseComponent):
 class GazeboSimKinect(BaseComponent):
     def setup(self):
         self.gz = botXimport('gazebo_api')['gazebo_api']['module']()
+        print("GazeboSimKinect setting up! ", self.gz)
         
         self.gz.setup()
 
@@ -61,6 +75,7 @@ class GazeboSimBot(BaseRobot):
         # self.add_component(...)
         self.add_component('camera',GazeboSimKinect())
         self.add_component('grasp', GraspController())
+        self.add_component('path_planner', ManipulationController())
         # self.add_component('bridge', botXimport('rosbridge_api')['rosbridge_suit_component']['module']())
         # self.setup_components()
 
